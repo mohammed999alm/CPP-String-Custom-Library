@@ -67,6 +67,10 @@ int main()
 		<< MyString::trimAll("                 MOhammed                ") << endl;
 	cout << "Trim All   : " << string1.trimAll() << endl;
 
+	string testable = "Mohammed Almislaty";
+	cout << "Erase Via Static Method Member Test : " << MyString::eraseStr(testable, 0, 8) << endl;
+	cout << "Erase Via Static Method Member Test : " << string1.eraseStr( 8, 18) << endl;
+
 
 	system("pause > 0");
 

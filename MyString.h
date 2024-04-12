@@ -15,7 +15,7 @@ private:
 	//'A' = 65 , a = 97 , 97 - 32 = 65.
 //In this equation we are able to convert any lower case letter to upper case letter
 //by subtracting 32 from it to get converted successfully.
-    static char toUpperCase(char letter)
+	static char toUpperCase(char letter)
 	{
 
 		if (letter >= 'a' && letter <= 'z')
@@ -32,7 +32,7 @@ private:
 	//'A' = 65 , a = 97 , 65 - 32 = 97.
 	//In this equation we are able to convert any upper case letter to lower case letter
 	//by adding 32 to it to get converted successfully.
-    static char toLowerCase(char letter)
+	static char toLowerCase(char letter)
 	{
 		if (letter >= 'A' && letter <= 'Z')
 		{
@@ -49,7 +49,7 @@ private:
 		return (letter >= 'A' && letter <= 'Z');
 	}
 
-	static bool isLowerCase(char letter) 
+	static bool isLowerCase(char letter)
 	{
 		return (letter >= 'a' && letter <= 'z');
 	}
@@ -108,9 +108,9 @@ public:
 
 		short wordCounter = 0;
 
-		while ((pos = text.find(delimiter)) != string::npos) 
+		while ((pos = text.find(delimiter)) != string::npos)
 		{
-			word = text.substr(0, pos); 
+			word = text.substr(0, pos);
 
 			if (word != "")
 				wordCounter++;
@@ -133,9 +133,9 @@ public:
 
 
 
-	static string toUpperCase(string text) 
+	static string toUpperCase(string text)
 	{
-		for (int i = 0; i < text.length(); i++) 
+		for (int i = 0; i < text.length(); i++)
 		{
 			text[i] = toUpperCase(text[i]);
 		}
@@ -143,7 +143,7 @@ public:
 		return text;
 	}
 
-	string toUpperCase() 
+	string toUpperCase()
 	{
 		return toUpperCase(_value);
 	}
@@ -163,7 +163,7 @@ public:
 		return toLowerCase(_value);
 	}
 
-	static string invertString(string text) 
+	static string invertString(string text)
 	{
 		for (int i = 0; i < text.length(); i++)
 		{
@@ -173,12 +173,12 @@ public:
 		return text;
 	}
 
-    string invertString()
+	string invertString()
 	{
 		return invertString(_value);
 	}
 
-	static string mySubstr(string text, short start, short end) 
+	static string mySubstr(string text, short start, short end)
 	{
 
 		string word = "";
@@ -200,13 +200,13 @@ public:
 		return word;
 	}
 
-	string mySubstr(short start, short end) 
+	string mySubstr(short start, short end)
 	{
 		return mySubstr(_value, start, end);
 	}
 
 
-	static int customLength(string text) 
+	static int customLength(string text)
 	{
 		const char* str = text.c_str();
 
@@ -220,13 +220,13 @@ public:
 		return _customLength(str);
 	}
 
-	static string firstLetterWordUpperCase(string text) 
+	static string firstLetterWordUpperCase(string text)
 	{
 		bool isFirstLetter = true;
 
 		short length = customLength(text);
 
-		for (int i = 0; i < length; i++) 
+		for (int i = 0; i < length; i++)
 		{
 			if (isFirstLetter)
 				text[i] = toUpperCase(text[i]);
@@ -265,9 +265,9 @@ public:
 	}
 
 
-	static string trimRight(string text) 
+	static string trimRight(string text)
 	{
-		for (int i = 0; i < text.length(); i++) 
+		for (int i = 0; i < text.length(); i++)
 		{
 			if (text[i] != ' ')
 				return mySubstr(text, i, text.length());
@@ -276,14 +276,14 @@ public:
 		return text;
 	}
 
-	string trimRight() 
+	string trimRight()
 	{
 		return trimRight(_value);
 	}
 
-	static string trimLeft(string text) 
+	static string trimLeft(string text)
 	{
-		for (int i = text.length() - 1; i >= 0; i--) 
+		for (int i = text.length() - 1; i >= 0; i--)
 		{
 			if (text[i] != ' ')
 				return mySubstr(text, 0, i + 1);
@@ -292,12 +292,12 @@ public:
 		return text;
 	}
 
-	string trimLeft() 
+	string trimLeft()
 	{
 		return trimLeft(_value);
 	}
 
-	static string trimAll(string text) 
+	static string trimAll(string text)
 	{
 		text = trimRight(text);
 		text = trimLeft(text);
@@ -305,10 +305,26 @@ public:
 		return text;
 	}
 
-	string trimAll() 
+	string trimAll()
 	{
 		return trimAll(_value);
 	}
+
+
+	static string eraseStr(string text, short start, short end) 
+	{
+		string words = "";
+
+		words = mySubstr(text, 0, start) + mySubstr(text, end, text.length());
+
+		return words;
+	}
+
+	string eraseStr(short start, short end) 
+	{
+		return eraseStr(_value, start, end);
+	}
+
 
 	~MyString() 
 	{
