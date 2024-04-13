@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <vector>
 using namespace std;
 
 
@@ -325,6 +326,54 @@ public:
 		return eraseStr(_value, start, end);
 	}
 
+
+	static vector <string> splitString(string text, string delimiter) 
+	{
+		vector <string> vText;
+		string word = "";
+		short pos = 0;
+
+		while ((pos = text.find(delimiter)) != string::npos) 
+		{
+			word = mySubstr(text, 0, pos);
+
+			if (word != "")
+				vText.push_back(word);
+
+			text = eraseStr(text, 0, pos + delimiter.length());
+		}
+
+		if (text != "")
+			vText.push_back(text);
+
+		return vText;
+	}
+
+
+	vector<string> splitString(string delimiter)
+	{
+		return splitString(_value, delimiter);
+	}
+
+
+	static string joinString(vector<string> &vText, string delimiter) 
+	{
+		string text = "";
+
+		for (string line : vText) 
+		{
+			text += line + delimiter;
+		}
+
+		return eraseStr(text, text.length() - delimiter.length(), text.length());
+	}
+
+	string joinString(string delimiter) 
+	{
+		vector <string> vText = splitString(delimiter);
+
+		return joinString(vText, delimiter);
+	}
 
 	~MyString() 
 	{

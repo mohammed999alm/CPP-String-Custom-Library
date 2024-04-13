@@ -71,6 +71,54 @@ int main()
 	cout << "Erase Via Static Method Member Test : " << MyString::eraseStr(testable, 0, 8) << endl;
 	cout << "Erase Via Static Method Member Test : " << string1.eraseStr( 8, 18) << endl;
 
+	cout << "Testing split " << endl;
+	vector <string> vTest = string1.splitString(testable, " ");
+
+	for (string test : vTest) 
+	{
+		cout << test << endl;
+	}
+
+	vTest.clear();
+
+	cout << endl << endl;
+	vTest = MyString::splitString("Mohammed Abdu Salem Almislaty", " ");
+
+	for (string test : vTest)
+	{
+		cout << test << endl;
+	}
+
+	cout << "Test Join String : " << MyString::joinString(vTest, " ") << endl;
+
+	vTest.clear();
+
+	cout << endl << endl;
+	vTest = string1.splitString(" ");
+
+	for (string test : vTest)
+	{
+		cout << test << endl;
+	}
+
+
+	cout << "Test Join String " << string1.joinString(vTest, " ") << endl;
+	
+
+	vTest.clear();
+
+	cout << endl << endl;
+	vTest = string1.splitString(" ");
+
+	for (string test : vTest)
+	{
+		cout << test << endl;
+	}
+
+
+	cout << "Test Join String " << string1.joinString( " ") << endl;
+
+	cout << "Testing done it's work\n";
 
 	system("pause > 0");
 
