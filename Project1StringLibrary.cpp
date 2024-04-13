@@ -25,6 +25,14 @@ int main()
 	cout << "Punctuation  Counters Via static function member : "
 		<< MyString::countPunctuationSymbols("MohammedAlmislati99@gmail.com") << endl;
 
+	cout << "Find Letter 'a' Position : " << string1.findLetterFirstPos("a") << endl;
+
+	cout << "Find Letter 'a' Last Postition : " << string1.findLetterLastPos("a") << endl;
+
+	cout << "Position 9 in String is : " << string1.charPosition(9) << endl;
+	cout << "Position 18 in String is : " << string1.charPosition(18) << endl;
+
+
 	//cout << "Name : " << string1.value << endl;
 
 	//cout << "Number Of Words  : " << string1.countWords() << endl;

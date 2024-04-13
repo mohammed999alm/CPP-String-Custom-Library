@@ -461,6 +461,56 @@ public:
 		return countPunctuationSymbols(_value);
 	}
 
+	short  findLetterFirstPos(string text, string letter) 
+	{
+		const char* ch = letter.c_str();
+		for (int i = 0; i <= text.length(); i++) 
+		{
+			if (text[i] == *ch) 
+			{
+				return i;
+			}
+		}
+	}
+
+	short  findLetterFirstPos(string letter)
+	{
+		return findLetterFirstPos(_value, letter);
+	}
+
+	static short findLetterLastPos(string text, string letter)
+	{
+		const char* ch = letter.c_str();
+
+		for (int i = text.length() - 1; i >= 0; i--)
+		{
+			if (text[i] == *ch)
+			{
+				return i;
+			}
+		}
+	}
+
+	short  findLetterLastPos(string letter)
+	{
+		return findLetterLastPos(_value, letter);
+	}
+
+	static char charPosition(string text, short pos) 
+	{
+		for (int i = 0; i < text.length(); i++) 
+		{
+			if (i == pos) 
+			{
+				return text[i];
+			}
+		}
+	}
+
+	char charPosition(short pos)
+	{
+		return charPosition(_value, pos);
+	}
 
 	~MyString() 
 	{
