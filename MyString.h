@@ -55,6 +55,17 @@ private:
 		return (letter >= 'a' && letter <= 'z');
 	}
 
+	static bool isNumber(char letter) 
+	{
+		return (letter >= '1' && letter <= '9');
+	}
+
+	static bool isPunctCharacter(char letter) 
+	{
+		return ((letter >= ' ' && letter <= '/') || (letter >= ':' && letter <= '@')
+			|| (letter >= '[' && letter <= '`') || (letter >= '{' && letter <= '~'));
+	}
+
 	static char invertCharacter(char letter)
 	{
 		return (isLowerCase(letter)) ? toUpperCase(letter) : toLowerCase(letter);
@@ -374,6 +385,82 @@ public:
 
 		return joinString(vText, delimiter);
 	}
+
+
+	static short countCapitalLetters(string text) 
+	{
+		short counter = 0;
+
+		for (int i = 0; i < text.length(); i++) 
+		{
+			if (isUpperCase(text[i]))
+				counter++;
+		}
+
+		return counter;
+	}
+
+	short countCapitalLetters() 
+	{
+		return countCapitalLetters(_value);
+	}
+
+
+	static short countSmallLetters(string text)
+	{
+		short counter = 0;
+
+		for (int i = 0; i < text.length(); i++)
+		{
+			if (isLowerCase(text[i]))
+				counter++;
+		}
+
+		return counter;
+	}
+
+	short countSmallLetters()
+	{
+		return countSmallLetters(_value);
+	}
+
+
+	static short countNumbers(string text)
+	{
+		short counter = 0;
+
+		for (int i = 0; i < text.length(); i++)
+		{
+			if (isNumber(text[i]))
+				counter++;
+		}
+
+		return counter;
+	}
+
+	short countNumbers()
+	{
+		return countNumbers(_value);
+	}
+
+	static short countPunctuationSymbols(string text)
+	{
+		short counter = 0;
+
+		for (int i = 0; i < text.length(); i++)
+		{
+			if (isPunctCharacter(text[i]))
+				counter++;
+		}
+
+		return counter;
+	}
+
+	short countPunctuationSymbols()
+	{
+		return countPunctuationSymbols(_value);
+	}
+
 
 	~MyString() 
 	{
