@@ -532,6 +532,8 @@ public:
 		}
 	}
 
+
+
 	char charPosition(short pos)
 	{
 		return charPosition(_value, pos);
@@ -590,6 +592,90 @@ public:
 	{
 		return equalToIgnoreCase(_value, text);
 	}
+
+	static string reverseWords(string text, string delimiter)
+	{
+		vector <string> vText = splitString(text, delimiter);
+		string reverseTextWords = "";
+
+		for (int i = vText.size() - 1; i >= 0; i--) 
+		{
+			reverseTextWords += vText[i] + delimiter;
+		}
+
+		return reverseTextWords;
+	}
+
+	string reverseWords(string delimiter = " ")
+	{
+		return reverseWords(_value, delimiter);
+	}
+
+	
+	static string reverseString(string text) 
+	{
+		string reverseText = "";
+
+		for (int i = text.length() - 1; i >= 0; i--) 
+		{
+			reverseText  += text[i];
+		}
+
+		return reverseText;
+	}
+
+	string reverseString() 
+	{
+		return reverseString(_value);
+	}
+
+
+
+	static string concatString(string text1, string text2)
+	{
+		return text1 + text2;
+	}
+
+	string concatString(string text)
+	{
+		return concatString(_value, text);
+	}
+
+	static string concatStringObjects(MyString &obj1, MyString &obj2) 
+	{
+		return obj1.value + obj2.value;
+	}
+
+	string concatStringObjects(MyString &otherObject) 
+	{
+		return concatStringObjects(*this, otherObject);
+	}
+
+	static string stringReplace(string text, string stringToReplace, string replaceTo) 
+	{
+		vector <string> vText = splitString(text, " ");
+
+		for (string &line : vText) 
+		{
+			if (toLowerCase(line) == toLowerCase(stringToReplace)) 
+			{
+				line = replaceTo;
+
+				break;
+			}
+		}
+
+		text = joinString(vText, " ");
+
+		return text;
+	}
+
+	string stringReplace(string stringToReplace, string replaceTo)
+	{
+		return stringReplace(_value, stringToReplace, replaceTo);
+	}
+
+	
 
 	~MyString() 
 	{

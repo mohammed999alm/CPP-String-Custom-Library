@@ -7,15 +7,37 @@ int main()
 	MyString string1, string2;
 
 	string1.value = "Mohammed Almislaty! 1999";
-	string2.value = "mohammed almislaty! 1999";
+	string2.value = " mohammed almislaty! 1999";
 
 	
 	string text = "Mohammed Almislaty! 1999";
 
+	cout << "Replace Mohammed to Ahmed : " << string2.stringReplace("Mohammed", "Ahmed") << endl;
 
-	cout << "Number Of Vowels : " << string1.countVowels() << endl;
-	cout << "Number Of Vowels : " << string2.countVowels() << endl;
-	cout << "Number Of Vowels : " << MyString::countVowels(text) << endl;
+	cout << "Replace Mohammed to Ahmed : "
+		<< MyString::stringReplace(text, "Mohammed", "Ali") << endl;
+
+
+	//cout << "concatenating two String  :  " 
+	//	<< MyString::concatString("Mohammed Almislaty", " Or Mohammed Abdualrazag Almislaty") << endl;
+	//cout << "concatenating two String  :  " << string1.concatString(text) << endl;
+
+	//cout << "concatenating two String Objects  :  "
+	//	<< MyString::concatStringObjects(string1, string2) << endl;
+	//cout << "concatenating two String  Objects:  " << string1.concatStringObjects(string2) << endl;
+
+	//cout << "Reverse String  :  " << MyString::reverseString("Mohammed Almislaty") << endl;
+	//cout << "Reverse String  :  " << string1.reverseString() << endl;
+
+	//cout << "Reverse String words :  " << MyString::reverseWords("Mohammed Almislaty", " ") << endl;
+	//cout << "Reverse String words :  " << string1.reverseWords() << endl;
+
+	//cout << "Reverse String  :  " << MyString::reverseString("Mohammed Almislaty") << endl;
+	//cout << "Reverse String  :  " << string1.reverseString() << endl;
+
+	//cout << "Number Of Vowels : " << string1.countVowels() << endl;
+	//cout << "Number Of Vowels : " << string2.countVowels() << endl;
+	//cout << "Number Of Vowels : " << MyString::countVowels(text) << endl;
 
 
 	//cout << "Is Equal  : " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
