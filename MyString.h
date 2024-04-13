@@ -66,6 +66,12 @@ private:
 			|| (letter >= '[' && letter <= '`') || (letter >= '{' && letter <= '~'));
 	}
 
+	static bool isVowel(char letter) 
+	{
+		return (toUpperCase(letter) == 'A' || toUpperCase(letter) == 'E' ||
+			toUpperCase(letter) == 'I' || toUpperCase(letter) == 'O' || toUpperCase(letter) == 'U');
+	}
+
 	static char invertCharacter(char letter)
 	{
 		return (isLowerCase(letter)) ? toUpperCase(letter) : toLowerCase(letter);
@@ -461,6 +467,25 @@ public:
 		return countPunctuationSymbols(_value);
 	}
 
+
+	static short countVowels(string text)
+	{
+		short counter = 0;
+
+		for (int i = 0; i < text.length(); i++)
+		{
+			if (isVowel(text[i]))
+				counter++;
+		}
+
+		return counter;
+	}
+
+	short countVowels()
+	{
+		return countVowels(_value);
+	}
+
 	static short  findLetterFirstPos(string text, string letter) 
 	{
 		const char* ch = letter.c_str();
@@ -510,6 +535,60 @@ public:
 	char charPosition(short pos)
 	{
 		return charPosition(_value, pos);
+	}
+
+   static  bool stringCompare(string text1, string text2)
+	{
+		return (text1 == text2);
+	}
+
+	bool stringCompare(string text) 
+	{
+		return stringCompare(_value, text);
+	}
+
+	static  bool compareStringObjects(MyString& obj1, MyString& obj2)
+	{
+		return (obj2._value == obj2._value);
+	}
+
+	bool compareStringObjects(MyString& otherObject)
+	{
+		return compareStringObjects(*this, otherObject);
+	}
+
+
+	static bool compareObjects(MyString &obj1, MyString& obj2) 
+	{
+		return (&obj1 == &obj2);
+	}
+
+    bool compareObjects(MyString& otherObject)
+	{
+		return compareObjects(*this, otherObject);
+	}
+
+	static bool equalTo(string text1, string text2)
+	{
+		return text1 == text2;
+	}
+
+	bool equalTo(string text)
+	{
+		return equalTo(_value, text);
+	}
+
+	static bool equalToIgnoreCase(string text1, string text2)
+	{
+		text1 = toUpperCase(text1);
+		text2 = toUpperCase(text2);
+
+		return text1 == text2;
+	}
+
+	bool equalToIgnoreCase(string text)
+	{
+		return equalToIgnoreCase(_value, text);
 	}
 
 	~MyString() 

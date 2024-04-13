@@ -4,34 +4,89 @@ using namespace std;
 
 int main() 
 {
-	MyString string1;
+	MyString string1, string2;
 
 	string1.value = "Mohammed Almislaty! 1999";
+	string2.value = "mohammed almislaty! 1999";
+
+	
+	string text = "Mohammed Almislaty! 1999";
 
 
-	cout << "Capital Letter Counters : " << string1.countCapitalLetters() << endl;
-	cout << "Capital Letter Counters Via static function member : " 
-		<< MyString::countCapitalLetters("Mohammed Abdu Salem Almislaty") << endl;
+	cout << "Number Of Vowels : " << string1.countVowels() << endl;
+	cout << "Number Of Vowels : " << string2.countVowels() << endl;
+	cout << "Number Of Vowels : " << MyString::countVowels(text) << endl;
 
-	cout << "Small Letter Counters : " << string1.countSmallLetters() << endl;
-	cout << "Small Letter Counters Via static function member : "
-		<< MyString::countSmallLetters("Mohammed Abdu Salem Almislaty") << endl;
 
-	cout << "Number string Counters : " << string1.countNumbers() << endl;
-	cout << "Number string  Counters Via static function member : "
-		<< MyString::countNumbers("MohammedAlmislati99@gmail.com") << endl;
+	//cout << "Is Equal  : " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.equalTo(string1.value, string2.value) << endl;
 
-	cout << "Punctuation  Counters : " << string1.countPunctuationSymbols() << endl;
-	cout << "Punctuation  Counters Via static function member : "
-		<< MyString::countPunctuationSymbols("MohammedAlmislati99@gmail.com") << endl;
+	//cout << "Is Equal  : " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.equalTo(string2.value) << endl;
 
-	cout << "Find Letter 'a' Position : " << string1.findLetterFirstPos("a") << endl;
 
-	cout << "Find Letter 'a' Last Postition : " << string1.findLetterLastPos("a") << endl;
+	//cout << "Is Equal Ignore Case :  " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.equalToIgnoreCase(string1.value, string2.value) << endl;
 
-	cout << "Position 9 in String is : " << string1.charPosition(9) << endl;
-	cout << "Position 18 in String is : " << string1.charPosition(18) << endl;
+	//cout << "Is Equal Ignore Case : " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.equalToIgnoreCase(string2.value) << endl;
 
+	//cout << "Compare " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.stringCompare(string1.value, string2.value) << endl;
+
+	//cout << "\nCompare " << string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.stringCompare(string1.value, string2.value) << endl;
+
+
+
+	//cout << "\nCompare " << string1.value << "|   And   |" << text << "    Is 1(true)/0(false)  : "
+	//	<< string1.stringCompare(text) << endl;
+
+	//cout << "\nCompare Object " << &string1 << "|   And   |" << &string2 << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareObjects(string1,string2) << endl;
+
+
+	//cout << "\nCompare Object " << &string1 << "|   And   |" << &string2 << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareObjects(string1) << endl;
+
+
+	//cout << "\nCompare Object " << &string1 << "|   And   |" << &string2 << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareObjects(string2) << endl;
+
+	//cout << "\nCompare My Custom String Objects Values : \n" 
+	//	<< string1.value << "|   And   |" << text << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareStringObjects(string1, string2) << endl;
+
+	//cout << "\nCompare My Custom String Objects Values : \n"
+	//	<< string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareStringObjects(string1) << endl;
+
+	//cout << "\nCompare My Custom String Objects Values : \n"
+	//	<< string1.value << "|   And   |" << string2.value << "    Is 1(true)/0(false)  : "
+	//	<< string1.compareStringObjects(string2) << endl;
+
+	//cout << "Capital Letter Counters : " << string1.countCapitalLetters() << endl;
+	//cout << "Capital Letter Counters Via static function member : " 
+	//	<< MyString::countCapitalLetters("Mohammed Abdu Salem Almislaty") << endl;
+
+	//cout << "Small Letter Counters : " << string1.countSmallLetters() << endl;
+	//cout << "Small Letter Counters Via static function member : "
+	//	<< MyString::countSmallLetters("Mohammed Abdu Salem Almislaty") << endl;
+
+	//cout << "Number string Counters : " << string1.countNumbers() << endl;
+	//cout << "Number string  Counters Via static function member : "
+	//	<< MyString::countNumbers("MohammedAlmislati99@gmail.com") << endl;
+
+	//cout << "Punctuation  Counters : " << string1.countPunctuationSymbols() << endl;
+	//cout << "Punctuation  Counters Via static function member : "
+	//	<< MyString::countPunctuationSymbols("MohammedAlmislati99@gmail.com") << endl;
+
+	//cout << "Find Letter 'a' Position : " << string1.findLetterFirstPos("a") << endl;
+
+	//cout << "Find Letter 'a' Last Postition : " << string1.findLetterLastPos("a") << endl;
+
+	//cout << "Position 9 in String is : " << string1.charPosition(9) << endl;
+	//cout << "Position 18 in String is : " << string1.charPosition(18) << endl;
 
 	//cout << "Name : " << string1.value << endl;
 
