@@ -461,7 +461,7 @@ public:
 		return countPunctuationSymbols(_value);
 	}
 
-	short  findLetterFirstPos(string text, string letter) 
+	static short  findLetterFirstPos(string text, string letter) 
 	{
 		const char* ch = letter.c_str();
 		for (int i = 0; i <= text.length(); i++) 
